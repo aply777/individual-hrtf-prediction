@@ -1,0 +1,20 @@
+TEST evaluation - recorded before any figure was drawn; these are the numbers to report
+time 2026-08-28 09:14:16
+checkpoint /content/drive/MyDrive/HRTF_Checkpoints  epoch=?
+weight checksum 11962.064722
+==========================================================
+DB           subj  ears   RMSE (dB)
+CARLab        22    44      1.2909
+HUTUBS        24    48      1.7680
+SONICOM       60   120      1.4295
+pooled             212      1.4867
+MAE                         0.9313
+
+Convention: RMSE over (frequencies in the loss band x directions x all ears),
+identical to the val figure printed each epoch during training.
+
+HUTUBS duplicate-subject check (pp1/pp96 = FABIAN dummy head; pp22/pp88 = the same person)
+  pp1   in -      | pp96  in -      | same side, no leakage
+  pp22  in -      | pp88  in -      | same side, no leakage
+
+(The Chinese original of this file is kept alongside as _LOCKED_metrics.zh.txt.)

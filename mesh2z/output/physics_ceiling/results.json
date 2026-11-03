@@ -1,0 +1,83 @@
+{
+ "n_subjects": 164,
+ "dev_hash": "a8449c417af1",
+ "D1": {
+  "all bins": {
+   "rms": 4.729273384525419,
+   "direction_independent": 0.35762173169694317
+  },
+  "< 0.5 kHz": {
+   "rms": 1.9143651618704085,
+   "direction_independent": 0.964607119119121
+  },
+  "6-12 kHz": {
+   "rms": 5.523315629791516,
+   "direction_independent": 0.32421986331943226
+  }
+ },
+ "D2": {
+  "full_same": 4.756260740965988,
+  "full_other": 6.532748426026951,
+  "dtf_same": 4.068560313823043,
+  "dtf_other": 5.412809786861051,
+  "dtf_notch_same": 4.789936642904758,
+  "dtf_notch_other": 6.515295548903479
+ },
+ "D3": {
+  "population mean (leave-one-out)": {
+   "rms": 3.813696109265452,
+   "rms_notch": 4.568344181990911,
+   "r2": 0.0,
+   "r2_notch": 0.0
+  },
+  "ridge: mesh features -> z -> decoder": {
+   "rms": 3.697493094527869,
+   "rms_notch": 4.4142550657600115,
+   "r2": 0.06001142366196721,
+   "r2_notch": 0.06632180779689678,
+   "rank1": 0.018292682926829267,
+   "median_rank": 17.0
+  },
+  "own Mesh2HRTF simulation, bias removed": {
+   "rms": 4.671292625096305,
+   "rms_notch": 5.457762228896623,
+   "r2": -0.500313371934662,
+   "r2_notch": -0.42728791908789376,
+   "rank1": 0.11890243902439024,
+   "median_rank": 16.0
+  },
+  "own simulation, shrunk to mean (beta 0.19)": {
+   "rms": 3.75710807888492,
+   "rms_notch": 4.48468996092634,
+   "r2": 0.02945604429431581,
+   "r2_notch": 0.03628811297706824,
+   "rank1": 0.11890243902439024,
+   "median_rank": 20.0
+  }
+ },
+ "beta_mean": 0.19133294536362772,
+ "D4": {
+  "r": 0.17649885223136985,
+  "r_notch": 0.1875764307254608,
+  "argmin_rate": 0.12195121951219512
+ },
+ "corr_sim_ridge": 0.18206812463107677,
+ "bridge": {
+  "full HRTF, all 3072 directions (FFM_3_2_1)": {
+   "mean": 4.796721936208221,
+   "ridge": 4.63146054502077
+  },
+  "full HRTF, measured sphere": {
+   "mean": 4.758287331669746,
+   "ridge": 4.5826988464594045
+  },
+  "DTF, all directions": {
+   "mean": 3.88381885512459,
+   "ridge": 3.765254616724045
+  },
+  "DTF, measured sphere (D3)": {
+   "mean": 3.813696109265452,
+   "ridge": 3.697493094527869
+  }
+ }
+}

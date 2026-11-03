@@ -1,0 +1,17 @@
+TEST 集评估 —— 出图之前记录，这就是要报的数
+时间 2026-08-28 09:14:16
+checkpoint /content/drive/MyDrive/HRTF_Checkpoints  epoch=?
+权重校验和 11962.064722
+==========================================================
+库             人数    耳数   RMSE (dB)
+CARLab        22    44      1.2909
+HUTUBS        24    48      1.7680
+SONICOM       60   120      1.4295
+pooled             212      1.4867
+MAE                         0.9313
+
+口径: RMSE over (loss band 内的频率 × 方向 × 全部耳)，与训练时每 epoch 打印的一致。
+
+HUTUBS 重复受试者检查（pp1/pp96 = FABIAN 假人；pp22/pp88 = 同一人）
+  pp1   in —      | pp96  in —      | 同侧，无泄漏
+  pp22  in —      | pp88  in —      | 同侧，无泄漏

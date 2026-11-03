@@ -1,0 +1,28 @@
+{
+ "run": "FFM48k_meas",
+ "time": "2026-10-10 12:05:25",
+ "checkpoint_epoch": 98,
+ "ratio_limit": 1.25,
+ "passed": false,
+ "decision": "规则不通过：训练 INCLUDE_SIM=True 的 FFM48k_measim 给 Task 1 用",
+ "per_dataset": {
+  "SONICOM_SIM": {
+   "subjects": 164,
+   "meas_rmse": 1.3794,
+   "sim_rmse_partner_film": 3.3481,
+   "sim_rmse_no_film": 1.2841,
+   "encoding": "no FiLM",
+   "ratio": 0.931,
+   "passed": true
+  },
+  "SYMARE_BEM": {
+   "subjects": 46,
+   "meas_rmse": 1.1363,
+   "sim_rmse_partner_film": 1.5926,
+   "sim_rmse_no_film": 1.6678,
+   "encoding": "partner FiLM",
+   "ratio": 1.402,
+   "passed": false
+  }
+ }
+}

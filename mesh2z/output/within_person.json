@@ -1,0 +1,15 @@
+{
+ "n_subjects": 164,
+ "ratio_latent": 0.6729053065343461,
+ "ratio_geometry_simple": 0.5824311645005286,
+ "ratio_geometry_ear RFF multi-sigma": 0.6624907829030259,
+ "cv_r2": {
+  "simple": 0.002953288034698409,
+  "ear RFF multi-sigma": 0.004597090575608753,
+  "simple + ear RFF": 0.004617102657039962
+ },
+ "null_median": -8.121742826161515e-06,
+ "null_p95": 0.0003417572809622902,
+ "p_max": 0.004975124378109453,
+ "selfcheck": -3.352913917775702e-05
+}

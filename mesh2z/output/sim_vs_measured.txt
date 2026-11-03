@@ -1,0 +1,18 @@
+SYMARE  measured vs BEM (HE16kHz, MRI meshes, database authors)  (N = 61; identification: own simulation closest for 29.5%, chance 1.6%)
+    band         deviation from  r per ear (mean)  r pooled  R2 as predictor
+    0.2-16 kHz            mixed            +0.756    +0.754           +0.538
+    0.2-16 kHz         per-side            +0.225    +0.227           -0.524
+    0.2-5 kHz             mixed            +0.875    +0.875           +0.764
+    0.2-5 kHz          per-side            +0.320    +0.344           +0.031
+    6-12 kHz              mixed            +0.774    +0.773           +0.565
+    6-12 kHz           per-side            +0.293    +0.297           -0.481
+
+SONICOM measured vs Mesh2HRTF (optical scans, SONICOM curators)  (N = 164; identification: own simulation closest for 8.8%, chance 0.6%)
+    band         deviation from  r per ear (mean)  r pooled  R2 as predictor
+    0.2-16 kHz            mixed            +0.717    +0.716           +0.482
+    0.2-16 kHz         per-side            +0.164    +0.165           -0.532
+    0.2-5 kHz             mixed            +0.892    +0.890           +0.790
+    0.2-5 kHz          per-side            +0.367    +0.379           +0.092
+    6-12 kHz              mixed            +0.706    +0.705           +0.453
+    6-12 kHz           per-side            +0.161    +0.163           -0.535
+

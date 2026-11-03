@@ -1,0 +1,65 @@
+subjects: measured=61  HE=61  HTE=61  common=61
+
+==========================================================================
+1. SUBJECT CORRESPONDENCE CHECK  (is HA_n the same person as HB_n?)
+==========================================================================
+  gain-aligned LSD, correct pairing : 6.358 dB (median 6.264)
+  gain-aligned LSD, mismatched      : 7.045 dB
+  separation                        : 0.687 dB (1.01 sigma)
+  true match is argmin for          : 21/61 subjects (mean rank 8.05)
+  chance level for argmin            : 1.6%  (observed 34.4%)
+  => ordering HA_n <-> HB_n CONFIRMED (far above chance).
+     BUT the margin is small (~1 sigma): BEM only weakly preserves
+     individual identity relative to the measured HRTF. See section 5.
+
+==========================================================================
+2. BEM vs MEASURED  (head+ears mesh, HE16kHz)
+==========================================================================
+  full 0.2-16 kHz   LSD_raw=10.54  LSD_gain= 6.28  LSD_perfreq= 5.39  | SD_L1_gain= 4.66 dB   (offset -8.4 dB)
+  low  0.2-5  kHz   LSD_raw= 6.84  LSD_gain= 3.02  LSD_perfreq= 2.59  | SD_L1_gain= 2.23 dB   (offset -6.1 dB)
+  notch 6-12  kHz   LSD_raw=11.73  LSD_gain= 6.35  LSD_perfreq= 5.81  | SD_L1_gain= 4.72 dB   (offset -9.8 dB)
+  high 12-16  kHz   LSD_raw=12.18  LSD_gain= 7.70  LSD_perfreq= 7.12  | SD_L1_gain= 5.93 dB   (offset -9.1 dB)
+
+==========================================================================
+3. TORSO ABLATION  (only valid <= 5 kHz, where HTE is trusted)
+==========================================================================
+  head+ears        (no torso) vs measured :  3.02 dB
+  head+torso+ears             vs measured :  2.94 dB
+  improvement from adding the torso       : +0.08 dB (+2.5%)
+
+==========================================================================
+4. REFERENCE POINTS
+==========================================================================
+  mean-HRTF baseline (measured)           :  8.38 dB
+  BEM (HE16kHz)                           :  6.28 dB
+  Zhang et al. 2021 on HUTUBS (SD, L1)    :  7.23 dB   <- their metric is L1
+  ours in the same L1 metric              :  4.66 dB
+
+==========================================================================
+5. DOES BEM CAPTURE THE RIGHT INDIVIDUAL VARIATION?
+==========================================================================
+  0.2-16 kHz:  corr(dev_measured, dev_BEM) = +0.756 +/- 0.056   |  R^2 of BEM as a predictor = +0.539
+  0.2-5  kHz:  corr(dev_measured, dev_BEM) = +0.875 +/- 0.033   |  R^2 of BEM as a predictor = +0.763
+  6-12   kHz:  corr(dev_measured, dev_BEM) = +0.775 +/- 0.055   |  R^2 of BEM as a predictor = +0.567
+  (corr ~ 0 means BEM's between-subject differences are unrelated to the
+   real ones -> a perfect BEM surrogate could not personalize.)
+
+==========================================================================
+5b. DECOMPOSING THE GAP: systematic bias vs per-subject error
+==========================================================================
+  0.2-16 kHz:  total  6.33 dB  =  systematic bias  2.74 dB  (+)  per-subject residual  5.70 dB
+  0.2-5  kHz:  total  3.05 dB  =  systematic bias  2.01 dB  (+)  per-subject residual  2.29 dB
+  6-12   kHz:  total  6.40 dB  =  systematic bias  1.98 dB  (+)  per-subject residual  6.08 dB
+  The systematic part is one fixed (freq x direction) map shared by all
+  subjects -> removable by a calibration/residual step. The per-subject
+  residual is the part no fixed correction can fix.
+
+==========================================================================
+6. DIRECTIONAL BREAKDOWN (left ear, 0.2-16 kHz, gain-aligned)
+==========================================================================
+  ipsilateral     (143 dirs):  5.33 dB
+  contralateral   (142 dirs):  6.85 dB
+  median plane    ( 68 dirs):  6.04 dB
+
+figure -> /sessions/exciting-jolly-cannon/mnt/ELEC5021/analysis/bem_vs_measured.png
+data   -> /sessions/exciting-jolly-cannon/mnt/ELEC5021/analysis/bem_vs_measured.npz

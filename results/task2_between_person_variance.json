@@ -1,0 +1,87 @@
+{
+ "created": "2026-10-12 15:52:30",
+ "script": "task2/between_person_variance.py",
+ "data_zip_sha256": "f51c6b072123e70d6d8a0691373ab90e3f6db9856ce6306f65d949c87fbf97c7",
+ "split_sha256": "dc89bc454fef351951283cccb3772fdd3e552bbdde5d13668f8f576f4cd83561",
+ "definition": "rms over ears x band bins x 2652 directions of (DTF - across-ear mean), ddof 0; var_ratio = (measured / simulated)^2; CI: subject bootstrap, both ears together",
+ "n_boot": 1000,
+ "seed": 0,
+ "databases": {
+  "SONICOM": {
+   "n_subjects": 164,
+   "n_ears": 328,
+   "simulated": "SONICOM_SIM",
+   "measured": "SONICOM",
+   "bands": {
+    "0.2-5 kHz": {
+     "n_bins": 25,
+     "rms_sim_db": 0.973383367061615,
+     "rms_meas_db": 1.7243016958236694,
+     "var_ratio": 3.1380414002024075,
+     "var_ratio_ci95": [
+      2.924430388062275,
+      3.375030065773468
+     ]
+    },
+    "6-12 kHz": {
+     "n_bins": 33,
+     "rms_sim_db": 3.9801535606384277,
+     "rms_meas_db": 4.556786060333252,
+     "var_ratio": 1.3107432256350402,
+     "var_ratio_ci95": [
+      1.2570050339518886,
+      1.3663230819661802
+     ]
+    },
+    "12-16 kHz": {
+     "n_bins": 22,
+     "rms_sim_db": 4.564306259155273,
+     "rms_meas_db": 4.628478050231934,
+     "var_ratio": 1.028316637203639,
+     "var_ratio_ci95": [
+      0.9760082815939175,
+      1.0908575872051127
+     ]
+    }
+   }
+  },
+  "SYMARE": {
+   "n_subjects": 46,
+   "n_ears": 92,
+   "simulated": "SYMARE_BEM",
+   "measured": "SYMARE",
+   "bands": {
+    "0.2-5 kHz": {
+     "n_bins": 25,
+     "rms_sim_db": 0.9632784724235535,
+     "rms_meas_db": 1.7901216745376587,
+     "var_ratio": 3.4535153651931485,
+     "var_ratio_ci95": [
+      3.0099376277874828,
+      4.061127305348497
+     ]
+    },
+    "6-12 kHz": {
+     "n_bins": 33,
+     "rms_sim_db": 4.23266077041626,
+     "rms_meas_db": 4.259349346160889,
+     "var_ratio": 1.0126505373959724,
+     "var_ratio_ci95": [
+      0.9670382833811302,
+      1.0637978818282217
+     ]
+    },
+    "12-16 kHz": {
+     "n_bins": 22,
+     "rms_sim_db": 4.663111686706543,
+     "rms_meas_db": 4.475064277648926,
+     "var_ratio": 0.9209730472986104,
+     "var_ratio_ci95": [
+      0.8539166949686285,
+      0.9976361525648642
+     ]
+    }
+   }
+  }
+ }
+}

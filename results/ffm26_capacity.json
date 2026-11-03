@@ -1,0 +1,42 @@
+{
+ "checkpoint": "FFM26_best.pth",
+ "epoch_index": 98,
+ "epoch": 99,
+ "params_total": 100870185,
+ "params_bridge": 100762112,
+ "params_other": 108073,
+ "bridge_layers": {
+  "encoder.fc_encode.1.weight": {
+   "shape": [
+    512,
+    98304
+   ],
+   "weights": 50331648,
+   "directions_for_99pct_energy": 207,
+   "of": 512
+  },
+  "decoder.fc_decode.2.weight": {
+   "shape": [
+    98304,
+    512
+   ],
+   "weights": 50331648,
+   "directions_for_99pct_energy": 460,
+   "of": 512
+  }
+ },
+ "params_spherical_convolutions": 24817,
+ "train_rmse_db": 1.3375690229365587,
+ "val_rmse_db": 1.4854604005813599,
+ "val_rmse_db_stored": 1.4854604005813599,
+ "train_subjects": {
+  "CARLab": 174,
+  "HUTUBS": 58,
+  "SONICOM": 299,
+  "SYMARE": 37
+ },
+ "train_ears": 1136,
+ "n_bins": 93,
+ "spherical_maps": 105648,
+ "values": 324550656
+}

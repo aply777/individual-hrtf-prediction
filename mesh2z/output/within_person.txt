@@ -1,0 +1,16 @@
+Within-person test, 164 SONICOM development subjects (features in 35 s)
+
+Size of within-person differences (median distance; ratio to between-person)
+    latent z          left vs right    1265 | person i vs j (left ears)    1879 | ratio 0.67
+    simple            ratio 0.58
+    ear RFF multi-sigma ratio 0.66
+
+Self-check: random features CV-R2 -0.0000 (must be <= ~0)
+
+Predict z_L - z_R from (left pinna) - (mirrored right pinna): one row per subject, 10-fold CV
+    simple                 CV-R2 +0.0030
+    ear RFF multi-sigma    CV-R2 +0.0046
+    simple + ear RFF       CV-R2 +0.0046
+    max-statistic permutation (200): null median -0.0000, 95th pct +0.0003; observed best +0.0046, p = 0.005
+
+For comparison, between-person mesh -> z (FFM_3_2_1, ear-level, same features plus head): CV-R2 +0.076.

@@ -1,0 +1,37 @@
+# ---- never commit: model weights & data ----
+*.pth
+*.pt
+*.ckpt
+*.npy
+*.npz
+*.mat
+*.sofa
+*.zip
+*.imp
+hrirfilt*
+
+# ---- large / generated ----
+bandmaps*/
+# Two legacy demonstration volumes are intentionally retained for provenance.
+!results/archive/bandmaps_test_0828_0914_CARLab_part1of2/
+!results/archive/bandmaps_test_0828_0914_SONICOM_part2of3/
+*_out/
+checkpoints/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# ---- OS ----
+.DS_Store
+
+# ---- if this repo is ever made PUBLIC, uncomment these:
+#   they contain real participant surnames
+results/ha_to_carlab_map.csv
+results/symare61_to_carlab_RESOLVED.csv
+
+# ---- local downloads of Colab outputs (checkpoints) ----
+preprocess_48k/output/
+
+# ---- notebook outputs downloaded from Drive (archived copies go to results/) ----
+task1/output/
+task2/output/

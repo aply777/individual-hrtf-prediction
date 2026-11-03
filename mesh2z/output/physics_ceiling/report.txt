@@ -1,0 +1,30 @@
+Pipeline check: reprocessing P0001 reproduces the stored measured array, max |diff| 0.0e+00 dB
+
+D1  Between-person variation of the measured HRTF (measured sphere, 164 subjects x 2 ears)
+    all bins   RMS 4.73 dB | direction-independent 35.8% | direction-dependent 64.2%
+    < 0.5 kHz  RMS 1.91 dB | direction-independent 96.5% | direction-dependent  3.5%
+    6-12 kHz   RMS 5.52 dB | direction-independent 32.4% | direction-dependent 67.6%
+
+D2  Left vs mirrored right ear      same person   different person
+    full HRTF                           4.76          6.53 dB
+    DTF                                 4.07          5.41 dB
+    DTF, 6-12 kHz                       4.79          6.52 dB
+
+D3  Predicting each ear's measured DTF (measured sphere). Chance identification: rank-1 0.6%, median rank 82
+    predictor                                         RMS dB   6-12k      R2  R2 6-12k  rank-1 med.rank
+    population mean (leave-one-out)                     3.81    4.57  +0.000    +0.000
+    ridge: mesh features -> z -> decoder                3.70    4.41  +0.060    +0.066    1.8%       17
+    own Mesh2HRTF simulation, bias removed              4.67    5.46  -0.500    -0.427   11.9%       16
+    own simulation, shrunk to mean (beta 0.19)          3.76    4.48  +0.029    +0.036   11.9%       20
+
+D4  Gain-aligned magnitude, 0.2-16 kHz, per side: r(dev_meas, dev_sim) = +0.176 (r^2 0.031); 6-12 kHz +0.188; own simulation is the argmin for 12.2%
+    Mirrored right ears, so deviations are per side. For SYMARE vs SONICOM on one footing see sim_vs_measured.py:
+    the 08-08 SYMARE r = 0.756 mixed left and right ears; per side it is 0.225 (SONICOM 0.164).
+    correlation of (simulation - mean) with (ridge - mean): +0.182
+
+Bridge  The same ridge predictions under four conventions (mean = leave-one-out over these subjects)
+    convention                                          mean   ridge   gain
+    full HRTF, all 3072 directions (FFM_3_2_1)         4.797   4.631  0.165
+    full HRTF, measured sphere                         4.758   4.583  0.176
+    DTF, all directions                                3.884   3.765  0.119
+    DTF, measured sphere (D3)                          3.814   3.697  0.116
